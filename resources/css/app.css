@@ -1097,3 +1097,230 @@ select {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--border-light);
 }
+
+/* ===================================
+   Budget Planner
+   =================================== */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.month-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.current-month {
+    font-weight: 600;
+    min-width: 140px;
+    text-align: center;
+}
+
+.budget-summary {
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.summary-label {
+    color: var(--text-secondary);
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.summary-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.progress-bar-container {
+    height: 10px;
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar.warning {
+    background: linear-gradient(135deg, var(--warning), #fbbf24);
+}
+
+.progress-bar.danger {
+    background: linear-gradient(135deg, var(--danger), var(--danger-light));
+}
+
+.budgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.budget-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.budget-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.budget-card.warning {
+    border-color: var(--warning);
+}
+
+.budget-card.over {
+    border-color: var(--danger);
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), var(--bg-card));
+}
+
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.budget-category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.budget-category .category-icon {
+    font-size: 1.5rem;
+}
+
+.budget-category .category-name {
+    font-weight: 600;
+}
+
+.budget-actions {
+    display: flex;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.budget-card:hover .budget-actions {
+    opacity: 1;
+}
+
+.budget-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.progress-labels .spent {
+    color: var(--text-secondary);
+}
+
+.progress-labels .percentage {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.progress-labels .percentage.over {
+    color: var(--danger);
+}
+
+.budget-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+}
+
+.budget-limit,
+.budget-remaining {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.budget-limit .label,
+.budget-remaining .label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.budget-limit .value {
+    font-weight: 500;
+}
+
+.budget-remaining .value {
+    font-weight: 600;
+    color: var(--success);
+}
+
+.budget-remaining.negative .value {
+    color: var(--danger);
+}
+
+.over-badge {
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    background: var(--danger);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.selected-category {
+    padding: 0.875rem 1rem;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+

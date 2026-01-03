@@ -28,6 +28,10 @@
                     <span class="nav-icon">💸</span>
                     <span class="nav-text" v-if="!sidebarCollapsed">Transactions</span>
                 </router-link>
+                <router-link to="/budgets" class="nav-item" active-class="active">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text" v-if="!sidebarCollapsed">Budgets</span>
+                </router-link>
             </nav>
 
             <div class="sidebar-footer">

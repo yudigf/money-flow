@@ -40,4 +40,8 @@ Route::middleware('auth:sanctum')->group(function (): void {
 
     // Transaction routes
     Route::apiResource('transactions', TransactionController::class);
+
+    // Budget routes
+    Route::get('budgets/summary', [\App\Http\Controllers\BudgetController::class, 'summary'])->name('budgets.summary');
+    Route::apiResource('budgets', \App\Http\Controllers\BudgetController::class)->except(['show']);
 });

@@ -12,6 +12,7 @@ import Dashboard from '@/pages/Dashboard.vue';
 import Wallets from '@/pages/Wallets.vue';
 import Categories from '@/pages/Categories.vue';
 import Transactions from '@/pages/Transactions.vue';
+import Budgets from '@/pages/Budgets.vue';
 
 const routes = [
     {
@@ -36,6 +37,7 @@ const routes = [
             { path: 'wallets', name: 'wallets', component: Wallets },
             { path: 'categories', name: 'categories', component: Categories },
             { path: 'transactions', name: 'transactions', component: Transactions },
+            { path: 'budgets', name: 'budgets', component: Budgets },
         ],
     },
 ];
