@@ -2,26 +2,36 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\WalletController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
 /*
 |--------------------------------------------------------------------------
 | API Routes - MoneyFlow
 |--------------------------------------------------------------------------
 |
-| All routes below require authentication via Sanctum.
+| Public routes for authentication.
+| Protected routes require Sanctum token.
 |
 */
 
+// Public routes (no authentication required)
+Route::prefix('auth')->group(function (): void {
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+});
+
+// Protected routes (authentication required)
 Route::middleware('auth:sanctum')->group(function (): void {
+    // Auth routes
+    Route::prefix('auth')->group(function (): void {
+        Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+        Route::get('/user', [AuthController::class, 'user'])->name('auth.user');
+    });
+
     // Wallet routes
     Route::apiResource('wallets', WalletController::class);
 
