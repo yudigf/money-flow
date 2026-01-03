@@ -52,4 +52,9 @@ Route::middleware('auth:sanctum')->group(function (): void {
         Route::get('/category-breakdown', [\App\Http\Controllers\ReportController::class, 'categoryBreakdown'])->name('reports.category-breakdown');
         Route::get('/daily-breakdown', [\App\Http\Controllers\ReportController::class, 'dailyBreakdown'])->name('reports.daily-breakdown');
     });
+
+    // Bill routes
+    Route::get('bills/summary', [\App\Http\Controllers\BillController::class, 'summary'])->name('bills.summary');
+    Route::post('bills/{bill}/mark-paid', [\App\Http\Controllers\BillController::class, 'markPaid'])->name('bills.mark-paid');
+    Route::apiResource('bills', \App\Http\Controllers\BillController::class);
 });

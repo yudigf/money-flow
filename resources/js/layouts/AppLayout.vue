@@ -36,6 +36,10 @@
                     <span class="nav-icon">📈</span>
                     <span class="nav-text" v-if="!sidebarCollapsed">Reports</span>
                 </router-link>
+                <router-link to="/bills" class="nav-item" active-class="active">
+                    <span class="nav-icon">🔔</span>
+                    <span class="nav-text" v-if="!sidebarCollapsed">Bills</span>
+                </router-link>
             </nav>
 
             <div class="sidebar-footer">

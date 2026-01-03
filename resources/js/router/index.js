@@ -14,6 +14,7 @@ import Categories from '@/pages/Categories.vue';
 import Transactions from '@/pages/Transactions.vue';
 import Budgets from '@/pages/Budgets.vue';
 import Reports from '@/pages/Reports.vue';
+import Bills from '@/pages/Bills.vue';
 
 const routes = [
     {
@@ -40,6 +41,7 @@ const routes = [
             { path: 'transactions', name: 'transactions', component: Transactions },
             { path: 'budgets', name: 'budgets', component: Budgets },
             { path: 'reports', name: 'reports', component: Reports },
+            { path: 'bills', name: 'bills', component: Bills },
         ],
     },
 ];
