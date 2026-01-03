@@ -44,4 +44,12 @@ Route::middleware('auth:sanctum')->group(function (): void {
     // Budget routes
     Route::get('budgets/summary', [\App\Http\Controllers\BudgetController::class, 'summary'])->name('budgets.summary');
     Route::apiResource('budgets', \App\Http\Controllers\BudgetController::class)->except(['show']);
+
+    // Report routes
+    Route::prefix('reports')->group(function (): void {
+        Route::get('/overview', [\App\Http\Controllers\ReportController::class, 'overview'])->name('reports.overview');
+        Route::get('/monthly-trend', [\App\Http\Controllers\ReportController::class, 'monthlyTrend'])->name('reports.monthly-trend');
+        Route::get('/category-breakdown', [\App\Http\Controllers\ReportController::class, 'categoryBreakdown'])->name('reports.category-breakdown');
+        Route::get('/daily-breakdown', [\App\Http\Controllers\ReportController::class, 'dailyBreakdown'])->name('reports.daily-breakdown');
+    });
 });

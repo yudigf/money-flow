@@ -32,6 +32,10 @@
                     <span class="nav-icon">📋</span>
                     <span class="nav-text" v-if="!sidebarCollapsed">Budgets</span>
                 </router-link>
+                <router-link to="/reports" class="nav-item" active-class="active">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text" v-if="!sidebarCollapsed">Reports</span>
+                </router-link>
             </nav>
 
             <div class="sidebar-footer">

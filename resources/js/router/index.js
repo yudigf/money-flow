@@ -13,6 +13,7 @@ import Wallets from '@/pages/Wallets.vue';
 import Categories from '@/pages/Categories.vue';
 import Transactions from '@/pages/Transactions.vue';
 import Budgets from '@/pages/Budgets.vue';
+import Reports from '@/pages/Reports.vue';
 
 const routes = [
     {
@@ -38,6 +39,7 @@ const routes = [
             { path: 'categories', name: 'categories', component: Categories },
             { path: 'transactions', name: 'transactions', component: Transactions },
             { path: 'budgets', name: 'budgets', component: Budgets },
+            { path: 'reports', name: 'reports', component: Reports },
         ],
     },
 ];
