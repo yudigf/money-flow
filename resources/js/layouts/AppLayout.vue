@@ -40,6 +40,10 @@
                     <span class="nav-icon">🔔</span>
                     <span class="nav-text" v-if="!sidebarCollapsed">Bills</span>
                 </router-link>
+                <router-link to="/investments" class="nav-item" active-class="active">
+                    <span class="nav-icon">💼</span>
+                    <span class="nav-text" v-if="!sidebarCollapsed">Investments</span>
+                </router-link>
             </nav>
 
             <div class="sidebar-footer">
